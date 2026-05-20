@@ -2,96 +2,108 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>9人と1匹の鹿児島・日置 2泊3日旅</title>
 <style>
 :root{
-  --ink:#0f0f10;
-  --ink2:#191718;
-  --paper:#f2e8d9;
-  --muted:rgba(242,232,217,.6);
-  --gold:#c8962a;
-  --gold2:#e8b84b;
+  --ink:#0f0f10;--ink2:#1c1a1b;
+  --paper:#f2e8d9;--muted:rgba(242,232,217,.65);
+  --gold:#c8962a;--gold2:#e8b84b;
   --serif:'Hiragino Mincho ProN','Hiragino Mincho Pro','Yu Mincho',YuMincho,Georgia,serif;
   --sans:'Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;
 }
-*{margin:0;padding:0;box-sizing:border-box}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{width:100%;height:100%;background:var(--ink);overflow:hidden;font-family:var(--serif)}
-
-/* ─── slideshow ─── */
 #ss{width:100%;height:100%;position:relative}
 .s{position:absolute;inset:0;display:none;background:var(--ink)}
 .s.on{display:flex}
 
-/* ─── bg overlay helper ─── */
+/* ── bg helper ── */
 .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-.ov{position:absolute;inset:0;background:rgba(10,9,9,.72);z-index:1}
+.ov{position:absolute;inset:0;background:rgba(10,9,9,.74);z-index:1}
 .rel{position:relative;z-index:2}
 
-/* ─── COVER ─── */
-.s.cover{flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px}
-.cover .kana{font-family:var(--sans);font-size:11px;letter-spacing:5px;color:var(--gold);margin-bottom:24px}
-.cover h1{font-size:clamp(32px,5.5vw,66px);color:var(--paper);line-height:1.3;font-weight:600;margin-bottom:22px}
-.cover .sub{font-family:var(--sans);font-size:clamp(14px,1.7vw,20px);color:var(--muted);line-height:2}
-.cover .members{margin-top:32px;font-family:var(--sans);font-size:clamp(12px,1.2vw,15px);color:rgba(242,232,217,.4);letter-spacing:1px}
+/* ── COVER ── */
+.s.cover{flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 32px}
+.cover .kana{font-family:var(--sans);font-size:12px;letter-spacing:5px;color:var(--gold);margin-bottom:22px}
+.cover h1{font-size:clamp(32px,6vw,68px);color:var(--paper);line-height:1.3;font-weight:600;margin-bottom:20px}
+.cover .sub{font-family:var(--sans);font-size:clamp(15px,1.8vw,21px);color:var(--muted);line-height:2}
+.cover .members{margin-top:28px;font-family:var(--sans);font-size:clamp(13px,1.3vw,16px);color:rgba(242,232,217,.4);letter-spacing:1px}
 
-/* ─── CHAPTER OPENER ─── */
+/* ── CHAPTER ── */
 .s.chapter{flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden}
-.chapter .ov{background:rgba(10,9,9,.68)}
-.chapter .ch-inner{position:relative;z-index:2;padding:40px}
-.chapter .ch-day{font-family:var(--sans);font-size:11px;letter-spacing:5px;color:var(--gold);margin-bottom:18px;display:block}
-.chapter h2{font-size:clamp(28px,5vw,60px);color:var(--paper);line-height:1.35;margin-bottom:16px}
-.chapter .ch-sub{font-family:var(--sans);font-size:clamp(13px,1.5vw,17px);color:var(--muted);line-height:2;max-width:600px}
-.chapter .rule{width:48px;height:1px;background:var(--gold);margin:24px auto 0}
+.chapter .ov{background:rgba(10,9,9,.70)}
+.chapter .inner{padding:40px 32px;position:relative;z-index:2}
+.chapter .day{font-family:var(--sans);font-size:12px;letter-spacing:5px;color:var(--gold);margin-bottom:18px;display:block}
+.chapter h2{font-size:clamp(30px,5.5vw,64px);color:var(--paper);line-height:1.35;margin-bottom:14px}
+.chapter .sub{font-family:var(--sans);font-size:clamp(15px,1.6vw,19px);color:var(--muted);line-height:2;max-width:580px}
+.chapter .rule{width:48px;height:1px;background:var(--gold);margin:22px auto 0}
 
-/* ─── STORY (narrative text + faded bg) ─── */
-.s.story{flex-direction:column;align-items:center;justify-content:center;padding:80px 100px;overflow:hidden;text-align:left}
-.story .ov{background:rgba(10,9,9,.75)}
+/* ── STORY ── */
+.s.story{flex-direction:column;align-items:center;justify-content:center;padding:72px 80px;overflow:hidden;text-align:left}
+.story .ov{background:rgba(10,9,9,.77)}
 .story .inner{position:relative;z-index:2;max-width:680px;width:100%}
-.story .st-label{font-family:var(--sans);font-size:10px;letter-spacing:4px;color:var(--gold);margin-bottom:18px;display:block}
-.story h3{font-size:clamp(22px,3vw,38px);color:var(--paper);line-height:1.4;margin-bottom:20px}
-.story p{font-family:var(--sans);font-size:clamp(14px,1.5vw,18px);color:rgba(242,232,217,.8);line-height:2;margin-bottom:14px}
-.story blockquote{border-left:3px solid var(--gold);padding-left:18px;margin:18px 0;font-size:clamp(16px,1.8vw,22px);color:var(--gold2);line-height:1.7;font-style:italic}
+.story .label{font-family:var(--sans);font-size:11px;letter-spacing:4px;color:var(--gold);margin-bottom:18px;display:block}
+.story h3{font-size:clamp(24px,3.2vw,42px);color:var(--paper);line-height:1.4;margin-bottom:18px}
+.story p{font-family:var(--sans);font-size:clamp(16px,1.6vw,20px);color:rgba(242,232,217,.82);line-height:2;margin-bottom:14px}
+.story blockquote{border-left:3px solid var(--gold);padding-left:16px;margin:16px 0;font-size:clamp(18px,2vw,24px);color:var(--gold2);line-height:1.7;font-style:italic}
 
-/* ─── QUOTE (big memorable line) ─── */
-.s.quote{flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 60px;overflow:hidden}
-.quote .ov{background:rgba(10,9,9,.7)}
-.quote .q-inner{position:relative;z-index:2;max-width:800px}
-.quote .q-label{font-family:var(--sans);font-size:10px;letter-spacing:4px;color:var(--gold);margin-bottom:28px;display:block}
-.quote q{font-size:clamp(26px,4.5vw,58px);color:var(--paper);line-height:1.45;font-style:normal;quotes:none;display:block}
+/* ── QUOTE ── */
+.s.quote{flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:72px 48px;overflow:hidden}
+.quote .ov{background:rgba(10,9,9,.72)}
+.quote .inner{position:relative;z-index:2;max-width:820px}
+.quote .qlabel{font-family:var(--sans);font-size:11px;letter-spacing:4px;color:var(--gold);margin-bottom:28px;display:block}
+.quote q{font-size:clamp(28px,4.8vw,62px);color:var(--paper);line-height:1.45;font-style:normal;quotes:none;display:block}
 .quote q::before,.quote q::after{content:''}
-.quote .q-sub{font-family:var(--sans);font-size:clamp(13px,1.4vw,17px);color:var(--muted);margin-top:22px;line-height:1.9}
+.quote .qsub{font-family:var(--sans);font-size:clamp(15px,1.5vw,19px);color:var(--muted);margin-top:22px;line-height:1.9}
 
-/* ─── PHOTO SLIDES ─── */
+/* ── PHOTO ── */
 .s.photo{flex-direction:column}
 .ph{flex:1;display:flex;flex-wrap:wrap;gap:4px;padding:8px 8px 0;min-height:0;overflow:hidden;background:var(--ink);align-content:flex-start}
 .ph img{display:block;background:var(--ink);object-fit:contain}
+.n1 .ph img{width:100%;height:calc(100vh - 118px)}
+.n2 .ph img{width:calc(50% - 2px);height:calc(100vh - 118px)}
+.n3 .ph img{width:calc(33.33% - 3px);height:calc(100vh - 118px)}
+.n4 .ph img{width:calc(50% - 2px);height:calc(50vh - 65px)}
 
-/* sizing by photo count */
-.n1 .ph img{width:100%;height:calc(100vh - 108px)}
-.n2 .ph img{width:calc(50% - 2px);height:calc(100vh - 108px)}
-.n3 .ph img{width:calc(33.33% - 3px);height:calc(100vh - 108px)}
-.n4 .ph img{width:calc(50% - 2px);height:calc(50vh - 60px)}
+/* ── CAPTION ── */
+.cap{padding:12px 36px 46px;background:var(--ink2);flex-shrink:0}
+.cap .cday{font-family:var(--sans);font-size:11px;letter-spacing:3px;color:var(--gold);display:block;margin-bottom:6px}
+.cap h3{font-size:clamp(22px,2.8vw,36px);color:var(--paper);line-height:1.3;margin-bottom:5px}
+.cap p{font-family:var(--sans);font-size:clamp(14px,1.4vw,18px);color:var(--muted);line-height:1.65}
 
-/* caption bar */
-.cap{padding:10px 40px 44px;background:var(--ink2);flex-shrink:0}
-.cap .c-day{font-family:var(--sans);font-size:10px;letter-spacing:3px;color:var(--gold);display:block;margin-bottom:5px}
-.cap h3{font-size:clamp(19px,2.6vw,32px);color:var(--paper);line-height:1.3;margin-bottom:4px}
-.cap p{font-family:var(--sans);font-size:clamp(13px,1.3vw,16px);color:var(--muted);line-height:1.65}
-
-/* ─── NAV ─── */
-#nav{position:fixed;bottom:0;left:0;right:0;display:flex;align-items:center;justify-content:center;padding:12px;gap:12px;z-index:200}
-.nb{background:rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.28);color:white;width:42px;height:42px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);transition:background .15s}
-.nb:hover{background:rgba(0,0,0,.9)}
-#ctr{font-family:var(--sans);font-size:11px;color:rgba(255,255,255,.7);min-width:52px;text-align:center;text-shadow:0 1px 6px #000}
+/* ── NAV ── */
+#nav{position:fixed;bottom:0;left:0;right:0;display:flex;align-items:center;justify-content:center;padding:12px;gap:14px;z-index:200}
+.nb{background:rgba(0,0,0,.72);border:1px solid rgba(255,255,255,.3);color:white;width:46px;height:46px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);transition:background .15s;-webkit-user-select:none;user-select:none}
+.nb:hover,.nb:active{background:rgba(0,0,0,.9)}
+#ctr{font-family:var(--sans);font-size:12px;color:rgba(255,255,255,.75);min-width:54px;text-align:center;text-shadow:0 1px 6px #000}
 #prog{position:fixed;top:0;left:0;height:2px;background:var(--gold);z-index:201;transition:width .25s}
+
+/* ── MOBILE ── */
+@media(max-width:600px){
+  .s.story{padding:48px 28px}
+  .s.story .inner{max-width:100%}
+  .s.chapter .inner{padding:32px 24px}
+  .s.quote{padding:48px 28px}
+  .cap{padding:10px 20px 50px}
+  .n3 .ph img{width:calc(50% - 2px);height:calc(50vh - 65px)}
+  .n3 .ph img:first-child{width:100%;height:calc(50vh - 65px)}
+  .n4 .ph img{height:calc(50vh - 65px)}
+  .cover .members{display:none}
+}
+@media(max-width:400px){
+  .cap h3{font-size:20px}
+  .cap p{font-size:14px}
+  .story h3{font-size:22px}
+  .story p{font-size:15px}
+}
 </style>
 </head>
 <body>
 <div id="prog"></div>
 <div id="ss">
 
-<!-- ① COVER -->
+<!-- 1 COVER -->
 <div class="s cover on">
   <div class="kana">KAGOSHIMA · HIOKI · MAY 2026</div>
   <h1>9人と1匹の<br>鹿児島・日置<br>2泊3日旅</h1>
@@ -99,152 +111,199 @@ html,body{width:100%;height:100%;background:var(--ink);overflow:hidden;font-fami
   <div class="members">にわ ／ みな ／ たき ／ はな ／ しん ／ ちお ／ けんたろう ／ そら ／ あお ／ ミーシャ</div>
 </div>
 
-<!-- ② STORY: プロローグ -->
+<!-- 2 STORY プロローグ -->
 <div class="s story">
   <img class="bg" src="./写真/あいろん亭２.jpg" alt="">
   <div class="ov"></div>
   <div class="inner">
-    <span class="st-label">PROLOGUE</span>
+    <span class="label">PROLOGUE</span>
     <h3>「鹿児島、行こうよ」</h3>
-    <p>その一言が生まれたのは、さいたま市大宮区の路地裏にある鉄板焼き店「あいろん亭」のカウンターだった。瀧シェフが鉄板の上でリズムよく食材を躍らせ、香ばしい匂いが店いっぱいに広がる夜。美味しい料理とお酒に心がほどけた頃、誰からともなくそんな話になった。</p>
+    <p>その一言が生まれたのは、さいたま市大宮区の鉄板焼き店「あいろん亭」のカウンターだった。瀧シェフが鉄板の上でリズムよく食材を躍らせ、香ばしい匂いが店いっぱいに広がる夜。</p>
     <p>行き先は鹿児島県日置市。集まったのは、大人6人、子ども3人、そして1匹の猫。</p>
     <blockquote>この旅は、観光地を巡った記録というより、「人と人が再び繋がっていく時間」の記録だったのだと思う。</blockquote>
   </div>
 </div>
 
-<!-- ③ PHOTO: あいろん亭 -->
-<div class="s photo n3">
+<!-- 3 PHOTO あいろん亭 -->
+<div class="s photo n2">
   <div class="ph">
     <img src="./写真/あいろん亭１.jpg" alt="">
     <img src="./写真/あいろん亭２.jpg" alt="">
-    <img src="./写真/あいろん亭３.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">PROLOGUE · さいたま市大宮区</span>
+    <span class="cday">PROLOGUE · さいたま市大宮区</span>
     <h3>鉄板焼き「あいろん亭」——すべての始まり</h3>
   </div>
 </div>
 
-<!-- ④ CHAPTER: 1日目 -->
+<!-- 4 PHOTO 出発 -->
+<div class="s photo n1">
+  <div class="ph">
+    <img src="./写真/出発の飛行機.jpg" alt="">
+  </div>
+  <div class="cap">
+    <span class="cday">5月16日（木）朝 · 出発</span>
+    <h3>いよいよ、鹿児島へ</h3>
+  </div>
+</div>
+
+<!-- 5 CHAPTER 1日目 -->
 <div class="s chapter">
-  <img class="bg" src="./写真/桜島フェリー１.jpg" alt="">
+  <img class="bg" src="./写真/桜島全景.jpg" alt="">
   <div class="ov"></div>
-  <div class="ch-inner rel">
-    <span class="ch-day">1日目 ／ 5月16日（木）</span>
+  <div class="inner rel">
+    <span class="day">1日目 ／ 5月16日（木）</span>
     <h2>「流されるまま」<br>で始まった旅</h2>
     <div class="rule"></div>
   </div>
 </div>
 
-<!-- ⑤ STORY: 空港着 -->
-<div class="s story">
-  <img class="bg" src="./写真/桜島.jpg" alt="">
-  <div class="ov"></div>
-  <div class="inner">
-    <span class="st-label">DAY 1 · 鹿児島空港</span>
-    <h3>空気が変わった</h3>
-    <p>鹿児島空港に降り立った瞬間、空気が変わった。湿度を含んだ南国の風。どこまでも広い空。埼玉では見ない濃い緑。</p>
-    <blockquote>「もう空気がおいしい」</blockquote>
-    <p>今回の旅は、最初から"完璧なスケジュール"を決めていたわけではない。「とりあえず桜島行こうか」「フェリー乗る？」「着いてから考えよう」——そんな温度感だった。</p>
-  </div>
-</div>
-
-<!-- ⑥ PHOTO: フェリー -->
+<!-- 6 PHOTO 到着 -->
 <div class="s photo n2">
   <div class="ph">
-    <img src="./写真/桜島フェリー１.jpg" alt="">
-    <img src="./写真/桜島フェリー２.jpg" alt="">
+    <img src="./写真/ステップワゴン.jpg" alt="">
+    <img src="./写真/到着直後の西郷隆盛像で撮影.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 1 · 13:30 · 桜島フェリー</span>
+    <span class="cday">DAY 1 · 鹿児島到着</span>
+    <h3>「もう空気がおいしい」——STEP WGNに乗り込んで、旅が始まった</h3>
+  </div>
+</div>
+
+<!-- 7 PHOTO フェリー -->
+<div class="s photo n2">
+  <div class="ph">
+    <img src="./写真/桜島フェリー.jpg" alt="">
+    <img src="./写真/フェリーの中.jpg" alt="">
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 1 · 13:30 · 桜島フェリー</span>
     <h3>気づけばそのまま車ごとフェリーへ</h3>
-    <p>誘導員さんの鮮やかな手旗に導かれ——「え！？もう乗るの！？決まったの！？」笑っているうちに出港。</p>
+    <p>「え！？もう乗るの！？決まったの！？」笑っているうちに出港。</p>
   </div>
 </div>
 
-<!-- ⑦ QUOTE: 流される -->
+<!-- 8 PHOTO フェリー船上 -->
+<div class="s photo n2">
+  <div class="ph">
+    <img src="./写真/フェリーから桜島を望遠鏡で眺める.jpg" alt="">
+    <img src="./写真/フェリーから撮影.jpg" alt="">
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 1 · フェリー船上</span>
+    <h3>子どもって、ちゃんと旅をする</h3>
+    <p>大人たちが話している横で、二人はずっと海と山を見ていた。</p>
+  </div>
+</div>
+
+<!-- 9 QUOTE 流される -->
 <div class="s quote">
-  <img class="bg" src="./写真/桜島フェリー２.jpg" alt="">
+  <img class="bg" src="./写真/フェリーから撮影.jpg" alt="">
   <div class="ov"></div>
-  <div class="q-inner rel">
-    <q>予定通りじゃなくていい。<br>むしろ、流れに身を任せた先に、<br>一番いい景色が待っていた。</q>
+  <div class="inner rel">
+    <q>予定通りじゃなくていい。<br>流れに身を任せた先に、<br>一番いい景色が待っていた。</q>
   </div>
 </div>
 
-<!-- ⑧ PHOTO: 桜島 -->
+<!-- 10 PHOTO 桜島全景 -->
 <div class="s photo n1">
   <div class="ph">
-    <img src="./写真/桜島.jpg" alt="">
+    <img src="./写真/桜島全景.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 1 · 桜島上陸</span>
+    <span class="cday">DAY 1 · 桜島上陸</span>
     <h3>桜島で感じた「地球の力」</h3>
-    <p>黒々とした溶岩。むき出しの岩肌。静かな海。</p>
+    <p>黒々とした溶岩。むき出しの岩肌。静かな海。火山の島特有の、荒々しさと静けさが混ざったような空気。</p>
   </div>
 </div>
 
-<!-- ⑨ PHOTO: 溶岩なぎさ遊歩道 -->
-<div class="s photo n1">
+<!-- 11 PHOTO 溶岩遊歩道 -->
+<div class="s photo n2">
   <div class="ph">
     <img src="./写真/溶岩なぎさ遊歩道.jpg" alt="">
+    <img src="./写真/IMG_6844.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 1 · 溶岩なぎさ遊歩道</span>
+    <span class="cday">DAY 1 · 溶岩なぎさ遊歩道</span>
     <h3>自然のスケール感に、圧倒される</h3>
   </div>
 </div>
 
-<!-- ⑩ PHOTO: ウニ -->
+<!-- 12 PHOTO ウニ -->
 <div class="s photo n1">
   <div class="ph">
     <img src="./写真/溶岩なぎさ遊歩道のうに.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 1 · 溶岩なぎさ遊歩道</span>
+    <span class="cday">DAY 1 · 溶岩なぎさ遊歩道</span>
     <h3>「ウニいる！！！」</h3>
-    <p>岩陰をのぞき込んでいたあおが突然叫んだ。見ると、本当に生きたウニがいる。自然って、ただそこにあるだけで面白い。</p>
+    <p>岩陰をのぞき込んでいたあおが突然叫んだ。自然って、ただそこにあるだけで面白い。</p>
   </div>
 </div>
 
-<!-- ⑪ QUOTE: 足湯 -->
-<div class="s quote">
-  <img class="bg" src="./写真/桜島.jpg" alt="">
-  <div class="ov"></div>
-  <div class="q-inner rel">
-    <span class="q-label">DAY 1 · 桜島溶岩なぎさ公園 足湯</span>
-    <q>「これ無料なの、<br>意味わからないね」</q>
-    <div class="q-sub">じんわり温かい湯。潮風。赤く染まる空。<br>誰かのその言葉に、全員がうなずいた。</div>
+<!-- 13 PHOTO 足湯 -->
+<div class="s photo n1">
+  <div class="ph">
+    <img src="./写真/桜島で足湯.jpg" alt="">
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 1 · 桜島溶岩なぎさ公園 足湯</span>
+    <h3>「これ無料なの、意味わからないね」</h3>
+    <p>じんわり温かい湯。潮風。雄大な桜島。誰かのその言葉に、全員がうなずいた。</p>
   </div>
 </div>
 
-<!-- ⑫ PHOTO: しろくまアイス + うどん -->
+<!-- 14 PHOTO 道の駅・アイス -->
 <div class="s photo n2">
   <div class="ph">
+    <img src="./写真/桜島の道の駅で撮影.jpg" alt="">
     <img src="./写真/しろくまアイス.jpg" alt="">
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 1 · 道の駅「桜島」</span>
+    <h3>しろくまアイス——美味しいものを食べると、人は静かになる</h3>
+  </div>
+</div>
+
+<!-- 15 PHOTO フェリーうどん -->
+<div class="s photo n2">
+  <div class="ph">
+    <img src="./写真/帰りのフェリーでうどん.jpg" alt="">
     <img src="./写真/桜島帰りのフェリーでうどんを食べる.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 1 · ビジターセンター → 帰りのフェリー</span>
-    <h3>美味しいものを食べると、人は静かになる</h3>
-    <p>しろくまアイス——子どもたちは一瞬で無言に。フェリーのうどんは、景色も含めて"味"だった。</p>
+    <span class="cday">DAY 1 · 帰りのフェリー · やぶ金うどん</span>
+    <h3>「なんで船のうどんってこんなに美味しいんだろうね」</h3>
+    <p>景色も含めて"味"なんだと思う。</p>
   </div>
 </div>
 
-<!-- ⑬ STORY: 日置・人の温度 -->
+<!-- 16 PHOTO 江口蓬菜館・合流 -->
+<div class="s photo n2">
+  <div class="ph">
+    <img src="./写真/江口蓬菜館の外観.jpg" alt="">
+    <img src="./写真/旬の野菜たちの看板.jpg" alt="">
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 1 · 16:15 · 江口蓬菜館 → 日置市</span>
+    <h3>「おー！ 来た来たー！」——にわ・みなと合流</h3>
+    <p>「旬の野菜たち」はにわが移住した頃に住まわせてもらった場所。女将のひとみさんが今でもつながっている。</p>
+  </div>
+</div>
+
+<!-- 17 STORY 日置・人の温度 -->
 <div class="s story">
   <img class="bg" src="./写真/みなちゃん家１.jpg" alt="">
   <div class="ov"></div>
   <div class="inner">
-    <span class="st-label">DAY 1 · 17:30 · 日置市</span>
+    <span class="label">DAY 1 · 17:30 · 日置市</span>
     <h3>日置で待っていた<br>「人の温度」</h3>
-    <p>日置へ到着すると、移住組のにわと、みなが迎えてくれた。この二人のホスピタリティが、本当に凄かった。</p>
-    <p>どこへ行けば一番気持ちいいか。何を食べれば鹿児島を感じられるか。その全部を、まるで自然呼吸みたいに用意してくれる。しかも押し付けがましさが全くない。</p>
-    <blockquote>気づけば全員が心地よく過ごしていて、「歓迎されている」というより、"もう昔からここにいた"ような感覚になっていく。</blockquote>
-    <p>この旅は単なる観光旅行ではなく、「誰かの暮らしの中へ入れてもらう旅」になっていた。</p>
+    <p>この二人のホスピタリティが、本当に凄かった。どこへ行けば一番気持ちいいか。何を食べれば鹿児島を感じられるか。その全部を、まるで自然呼吸みたいに用意してくれる。</p>
+    <blockquote>気づけば全員が、「歓迎されている」というより、"もう昔からここにいた"ような感覚になっていく。</blockquote>
   </div>
 </div>
 
-<!-- ⑭ PHOTO: みなちゃんの家 -->
+<!-- 18 PHOTO みなちゃんの家 -->
 <div class="s photo n3">
   <div class="ph">
     <img src="./写真/みなちゃん家１.jpg" alt="">
@@ -252,439 +311,532 @@ html,body{width:100%;height:100%;background:var(--ink);overflow:hidden;font-fami
     <img src="./写真/みなちゃん家３.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 1 · みなちゃんの家</span>
+    <span class="cday">DAY 1 · みなちゃんの家</span>
     <h3>まるで「暮らしそのものが作品」みたいな空間</h3>
-    <p>薪。焼き物。風。猫。全部が自然につながっている。</p>
   </div>
 </div>
 
-<!-- ⑮ QUOTE: ミーシャ登場 -->
+<!-- 19 PHOTO みなの家 薪 -->
+<div class="s photo n1">
+  <div class="ph">
+    <img src="./写真/みなちゃんの家４.jpg" alt="">
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 1 · みなちゃんの家 · 薪小屋</span>
+    <h3>薪があって、火があって、料理がある。みなの暮らしの根っこ。</h3>
+  </div>
+</div>
+
+<!-- 20 QUOTE ミーシャ登場 -->
 <div class="s quote">
   <img class="bg" src="./写真/ミーシャとの出会い.jpg" alt="">
   <div class="ov"></div>
-  <div class="q-inner rel">
-    <span class="q-label">DAY 1 · ミーシャ</span>
+  <div class="inner rel">
+    <span class="qlabel">DAY 1 · ミーシャ</span>
     <q>「え、ぬいぐるみ？」</q>
-    <div class="q-sub">ふわふわの茶色い毛並みに、たぬきみたいな大きな尻尾。<br>でも、その目は野生を忘れていない。</div>
+    <div class="qsub">ふわふわの茶色い毛並みに、たぬきみたいな大きな尻尾。<br>でも、その目は野生を忘れていない。</div>
   </div>
 </div>
 
-<!-- ⑯ PHOTO: ミーシャ full -->
+<!-- 21 PHOTO ミーシャ -->
 <div class="s photo n1">
   <div class="ph">
     <img src="./写真/ミーシャとの出会い.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 1 · ミーシャとの出会い</span>
+    <span class="cday">DAY 1 · ミーシャとの出会い</span>
     <h3>近づきすぎない。でも離れすぎもしない。</h3>
-    <p>ミーシャは、大雨の日に保護された猫だった。この家の"空気"そのものみたいだった。</p>
+    <p>大雨の日に保護された猫。この家の"空気"そのものみたいだった。</p>
   </div>
 </div>
 
-<!-- ⑰ PHOTO: あおとミーシャ -->
+<!-- 22 PHOTO あおとミーシャ -->
 <div class="s photo n3">
   <div class="ph">
     <img src="./写真/ミーシャとあお.jpg" alt="">
     <img src="./写真/ミーシャとあおとしん.jpg" alt="">
-    <img src="./写真/ミーシャとの朝.jpg" alt="">
+    <img src="./写真/車の上に座るミーシャ.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 1 · あおとミーシャ</span>
+    <span class="cday">DAY 1 · あおとミーシャ</span>
     <h3>あおとミーシャ、すぐに友達になる</h3>
-    <p>そっと座る。静かに話しかける。気づけば縁側で並んで座っていた。</p>
+    <p>そっと座る。静かに話しかける。夕方には前から一緒に暮らしていたような空気に。</p>
   </div>
 </div>
 
-<!-- ⑱ PHOTO: ミーシャとみんな -->
+<!-- 23 PHOTO ミーシャとみんな -->
 <div class="s photo n2">
   <div class="ph">
     <img src="./写真/ミーシャとあおとみな.jpg" alt="">
     <img src="./写真/ミーシャとちおとはな.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 1 · ミーシャとみんな</span>
-    <h3>猫というより、この家の"空気"そのもの</h3>
+    <span class="cday">DAY 1 · ミーシャとみんな</span>
+    <h3>誰かに媚びるわけでもない。でも、ちゃんと人のそばにいる。</h3>
   </div>
 </div>
 
-<!-- ⑲ PHOTO: つれづれの湯 -->
+<!-- 24 PHOTO つれづれの湯 内部 -->
+<div class="s photo n1">
+  <div class="ph">
+    <img src="./写真/つれづれの湯.jpg" alt="">
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 1 · 18:30 · つれづれの湯</span>
+    <h3>「人生No.1温泉」に出会った夜</h3>
+    <p>木々に囲まれた静かな空間。工芸品のように美しい建物。聞こえるのはカエルの声。</p>
+  </div>
+</div>
+
+<!-- 25 PHOTO つれづれの湯 -->
 <div class="s photo n2">
   <div class="ph">
     <img src="./写真/つれづれ温泉１日目.jpg" alt="">
     <img src="./写真/つれづれ温泉でくつろぐそら.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 1 · 18:30 · つれづれの湯</span>
-    <h3>「人生No.1温泉」に出会った夜</h3>
-    <p>森に包まれた静かな空間。工芸品のように美しい建物。聞こえるのはカエルの声。——後に満場一致で認定された。</p>
+    <span class="cday">DAY 1 · つれづれの湯</span>
+    <h3>「あ…やばい」</h3>
+    <p>湯に浸かった瞬間、全員が同じ顔になった。静かに感動している顔。後に満場一致で認定された。</p>
   </div>
 </div>
 
-<!-- ⑳ QUOTE: つれづれの湯 -->
-<div class="s quote">
-  <img class="bg" src="./写真/つれづれ温泉１日目.jpg" alt="">
-  <div class="ov"></div>
-  <div class="q-inner rel">
-    <q>「あ…やばい」</q>
-    <div class="q-sub">湯に浸かった瞬間、全員が同じ顔になった。<br>静かに感動している顔。</div>
-  </div>
-</div>
-
-<!-- ㉑ STORY: 初日の夜 -->
+<!-- 26 STORY 初日の夜 -->
 <div class="s story">
   <img class="bg" src="./写真/ひとみさんの野菜料理.jpg" alt="">
   <div class="ov"></div>
   <div class="inner">
-    <span class="st-label">DAY 1 · 19:30 · 初日の夜</span>
+    <span class="label">DAY 1 · 19:30 · 初日の夜</span>
     <h3>黒豚しゃぶしゃぶと、<br>幻の焼酎</h3>
-    <p>にわが用意してくれた黒豚しゃぶしゃぶ。女将・ひとみさんが届けてくれた地元野菜の料理とみなの漬物。土の香りがする。</p>
+    <p>にわが用意してくれた黒豚しゃぶしゃぶ。ひとみさんが届けてくれた地元野菜の料理。みなの漬物。</p>
     <blockquote>「野菜ってこんな味だったっけ？」みんな本気でそう言っていた。</blockquote>
-    <p>そこへ登場したのが、幻の焼酎「一どん」。その香りに一番テンションが上がっていたのは、たきとけんの二人だった。完全に少年みたいな顔になっている。</p>
+    <p>そこへ登場したのが、幻の焼酎「一どん」。たきとけんは完全に少年みたいな顔になっている。</p>
   </div>
 </div>
 
-<!-- ㉒ PHOTO: ひとみさんの料理 + 鳥刺し -->
+<!-- 27 PHOTO 初日の夜 食事 -->
 <div class="s photo n2">
   <div class="ph">
     <img src="./写真/ひとみさんの野菜料理.jpg" alt="">
     <img src="./写真/鳥刺しが美味しくて喜ぶしんとはな.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 1 NIGHT</span>
-    <h3>にわの15年が詰まった一皿</h3>
-    <p>しんは鳥刺しに魂を奪われ、大人が残した皿まで美しく平らげた。</p>
+    <span class="cday">DAY 1 NIGHT</span>
+    <h3>しんは鳥刺しに魂を奪われ、大人が残した皿まで美しく平らげた</h3>
   </div>
 </div>
 
-<!-- ㉓ PHOTO: 焼酎 -->
+<!-- 28 PHOTO 焼酎 -->
 <div class="s photo n1">
   <div class="ph">
     <img src="./写真/焼酎.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 1 NIGHT · 幻の焼酎</span>
+    <span class="cday">DAY 1 NIGHT · 幻の焼酎「一どん」</span>
     <h3>「これはやばい」「うわ、香りすご…」</h3>
     <p>こういう"好きなものに夢中になる大人"がいる旅は、やっぱり楽しい。</p>
   </div>
 </div>
 
-<!-- ㉔ CHAPTER: 2日目 -->
+<!-- 29 CHAPTER 2日目 -->
 <div class="s chapter">
-  <img class="bg" src="./写真/２日目朝食で干物を焼く.jpg" alt="">
+  <img class="bg" src="./写真/焚き火で焼いた干物を待つちおはなそら.jpg" alt="">
   <div class="ov"></div>
-  <div class="ch-inner rel">
-    <span class="ch-day">2日目 ／ 5月17日（金）</span>
+  <div class="inner rel">
+    <span class="day">2日目 ／ 5月17日（金）</span>
     <h2>焚き火の音で<br>始まる朝</h2>
-    <div class="ch-sub">パチパチと薪が爆ぜる音。澄んだ空気。コーヒーの香り。</div>
+    <div class="sub">パチパチと薪が爆ぜる音。澄んだ空気。コーヒーの香り。</div>
     <div class="rule"></div>
   </div>
 </div>
 
-<!-- ㉕ PHOTO: 焚き火の朝食 -->
+<!-- 30 PHOTO 焚き火の朝 -->
 <div class="s photo n2">
   <div class="ph">
-    <img src="./写真/２日目朝食で干物を焼く.jpg" alt="">
-    <img src="./写真/２日目朝食の自家焙煎コーヒー.jpg" alt="">
+    <img src="./写真/焚き火で干物を焼く.jpg" alt="">
+    <img src="./写真/焚き火で焼いた干物を待つちおはなそら.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 2 · 8:30</span>
-    <h3>朝から優勝だった</h3>
-    <p>前夜のしゃぶしゃぶの出汁で作った雑炊。江口蓬莱館のトロアジ・トロサバ干物。そしてマチュピチュ産の自家焙煎コーヒー。</p>
+    <span class="cday">DAY 2 · 8:30 · 焚き火の朝食</span>
+    <h3>トロアジ・トロサバ・豚しゃぶ雑炊——朝から優勝だった</h3>
   </div>
 </div>
 
-<!-- ㉖ PHOTO: コーヒー焙煎① -->
+<!-- 31 PHOTO そら・コーヒー -->
+<div class="s photo n2">
+  <div class="ph">
+    <img src="./写真/そら.jpg" alt="">
+    <img src="./写真/２日目朝食の自家焙煎コーヒー.jpg" alt="">
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · 朝</span>
+    <h3>鹿児島の朝は、いつもより少しゆっくり流れている</h3>
+  </div>
+</div>
+
+<!-- 32 PHOTO コーヒー焙煎① -->
 <div class="s photo n3">
   <div class="ph">
     <img src="./写真/コーヒーを直火で焙煎するみな.jpg" alt="">
+    <img src="./写真/コーヒーを焙煎するちお.jpg" alt="">
     <img src="./写真/コーヒー豆を直火で焙煎するしん.jpg" alt="">
-    <img src="./写真/コーヒー焙煎１.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 2 · 焚き火で焙煎体験</span>
+    <span class="cday">DAY 2 · 焚き火でコーヒー豆の焙煎体験</span>
     <h3>色が変わり、香りが変わり、音が変わる</h3>
   </div>
 </div>
 
-<!-- ㉗ PHOTO: コーヒー焙煎② -->
+<!-- 33 PHOTO コーヒー焙煎② -->
 <div class="s photo n3">
   <div class="ph">
-    <img src="./写真/コーヒーをミルするあおとしん.jpg" alt="">
+    <img src="./写真/コーヒー焙煎１.jpg" alt="">
     <img src="./写真/コーヒーを袋詰めするみなとあお.jpg" alt="">
-    <img src="./写真/焙煎コーヒーを素敵な陶器でいただく.jpg" alt="">
+    <img src="./写真/袋詰めしたみなのコーヒー.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 2 · マチュピチュ産豆</span>
+    <span class="cday">DAY 2 · マチュピチュ産豆</span>
     <h3>器は全部違う作家物。カップを選ぶ時間まで楽しい。</h3>
   </div>
 </div>
 
-<!-- ㉘ STORY: BBQグリル穴事件 -->
-<div class="s story">
-  <img class="bg" src="./写真/たきのBBQ.jpg" alt="">
-  <div class="ov"></div>
-  <div class="inner">
-    <span class="st-label">DAY 2 · BBQグリル穴事件発生</span>
-    <h3>「グリル、穴空いてる…」</h3>
-    <p>夕方、BBQの準備中に事件が起きる。寿命だった。「終わった…」</p>
-    <p>ところがここで、にわの地元ネットワークが炸裂する。知人の千代子さんへ相談すると、その息子の"かっちゃん"が軽トラで予備グリルを届けてくれたのだ。早い。優しい。そして距離感が近い。</p>
-    <blockquote>軽トラの荷台には、当然のようにミーシャ。風を受けながら、堂々としている。「あれ絶対、現場監督じゃん」全員爆笑だった。</blockquote>
-  </div>
-</div>
-
-<!-- ㉙ PHOTO: 食材買い出し -->
-<div class="s photo n3">
+<!-- 34 PHOTO 陶器でコーヒー -->
+<div class="s photo n1">
   <div class="ph">
-    <img src="./写真/刺身盛り食材１.jpg" alt="">
-    <img src="./写真/刺身盛り食材２.jpg" alt="">
-    <img src="./写真/刺身盛り食材３.jpg" alt="">
+    <img src="./写真/焙煎コーヒーを素敵な陶器でいただく.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 2 · 11:00 · 江口蓬莱館</span>
-    <h3>瀧シェフ合流。「今夜は絶対すごいことになる」という空気に</h3>
-    <p>鯛・炙りカツオ・マアジ・イサキ・コウイカ・タカエビ。たきの目が完全に料理人の目になっていた。</p>
+    <span class="cday">DAY 2 · 自家焙煎コーヒー</span>
+    <h3>「え、なにこれ…美味しい…」——一口飲んだ瞬間、みんな静かになった</h3>
   </div>
 </div>
 
-<!-- ㉚ PHOTO: 仕込み -->
-<div class="s photo n2">
+<!-- 35 PHOTO 仕込み -->
+<div class="s photo n3">
   <div class="ph">
     <img src="./写真/たきの仕込み１.jpg" alt="">
     <img src="./写真/にわとけんでカツオを炙る.jpg" alt="">
+    <img src="./写真/肉を切るはなとたき.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 2 · 仕込み班</span>
-    <h3>台所は本格的な戦場になっていた</h3>
+    <span class="cday">DAY 2 · 仕込み班 · たき合流後</span>
+    <h3>「今夜は絶対すごいことになる」という空気になった</h3>
+    <p>台所は本格的な戦場になっていた。</p>
   </div>
 </div>
 
-<!-- ㉛ PHOTO: 海水浴 -->
+<!-- 36 PHOTO 食材・刺身 -->
+<div class="s photo n2">
+  <div class="ph">
+    <img src="./写真/刺身盛り食材３.jpg" alt="">
+    <img src="./写真/刺身盛り.jpg" alt="">
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · 江口蓬菜館で仕入れた鮮魚</span>
+    <h3>鯛・炙りカツオ・マアジ・イサキ・コウイカ・タカエビ</h3>
+    <p>刺身盛りだけで歓声が上がる。</p>
+  </div>
+</div>
+
+<!-- 37 PHOTO 海水浴 -->
 <div class="s photo n3">
   <div class="ph">
     <img src="./写真/江口浜で海水浴.jpg" alt="">
     <img src="./写真/江口浜で海水浴２.jpg" alt="">
-    <img src="./写真/江口海浜公園.jpg" alt="">
+    <img src="./写真/江口浜で海水浴３.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 2 · 海水浴班</span>
+    <span class="cday">DAY 2 · 江口海浜公園 · 海水浴班</span>
     <h3>仕込み班が汗をかいている頃、子どもたちは江口の浜でキラキラしていた</h3>
-    <p>桜貝拾い、海水浴。「これハートみたい！」大人にとっては小さな貝でも、子どもにとっては宝物だ。</p>
   </div>
 </div>
 
-<!-- ㉜ PHOTO: こけけのマンゴー -->
+<!-- 38 PHOTO 貝拾い -->
+<div class="s photo n3">
+  <div class="ph">
+    <img src="./写真/江口浜で貝拾い.jpg" alt="">
+    <img src="./写真/江口海で拾った桜貝の思い出.jpg" alt="">
+    <img src="./写真/にわに桜貝をもらう.jpg" alt="">
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · 桜貝拾い</span>
+    <h3>大人にとっては小さな貝でも、子どもにとっては宝物だ</h3>
+  </div>
+</div>
+
+<!-- 39 PHOTO こけけのマンゴー -->
 <div class="s photo n1">
   <div class="ph">
     <img src="./写真/こけけ特産品販売所で最後の一個のマンゴーをゲット.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 2 · こけけ特産品販売所</span>
+    <span class="cday">DAY 2 · こけけ特産品販売所</span>
     <h3>「最後の一個のマンゴー」——まるでRPGのレアアイテム発見</h3>
-    <p>完熟マンゴーが残り一個。これを翌朝に食べることになるとは、この時はまだ知らない。</p>
+    <p>これを翌朝に食べることになるとは、この時はまだ知らない。</p>
   </div>
 </div>
 
-<!-- ㉝ PHOTO: サンセット -->
-<div class="s photo n2">
+<!-- 40 STORY 夕日の前に -->
+<div class="s story">
+  <img class="bg" src="./写真/江口浜の夕暮れ.jpg" alt="">
+  <div class="ov"></div>
+  <div class="inner">
+    <span class="label">DAY 2 · 19:00 · 江口海浜公園</span>
+    <h3>江口海浜公園、<br>奇跡みたいな夕日</h3>
+    <p>水平線へ沈む、濃いオレンジ色の太陽。空も海も全部オレンジに染まっていく。みんな自然と無言になっていた。</p>
+    <blockquote>たぶん、「綺麗」だけじゃ足りなかった。</blockquote>
+  </div>
+</div>
+
+<!-- 41 PHOTO 夕暮れ前 -->
+<div class="s photo n1">
   <div class="ph">
-    <img src="./写真/江口浜でサンセット.jpg" alt="">
-    <img src="./写真/江口浜でサンセット２.jpg" alt="">
+    <img src="./写真/江口浜の夕暮れ.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 2 · 19:00 · 江口海浜公園</span>
-    <h3>江口海浜公園、奇跡みたいな夕日</h3>
-    <p>水平線へ沈む濃いオレンジ色の太陽。空も海も全部オレンジに染まっていく。みんな自然と無言になっていた。</p>
+    <span class="cday">DAY 2 · 夕暮れ前の浜</span>
+    <h3>旅って、"何をしたか"より、"誰と同じ景色を見たか"なんだなと思った</h3>
   </div>
 </div>
 
-<!-- ㉞ QUOTE: 夕日 -->
-<div class="s quote">
-  <img class="bg" src="./写真/江口浜でサンセット２.jpg" alt="">
-  <div class="ov"></div>
-  <div class="q-inner rel">
-    <q>たぶん、「綺麗」だけじゃ<br>足りなかった。</q>
+<!-- 42 PHOTO 夕日 -->
+<div class="s photo n2">
+  <div class="ph">
+    <img src="./写真/江口浜の夕暮れ２.jpg" alt="">
+    <img src="./写真/江口浜の夕暮れ３.jpg" alt="">
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · 19:00 · 江口海浜公園の夕日</span>
+    <h3>一生忘れないと思う</h3>
   </div>
 </div>
 
-<!-- ㉟ STORY: 瀧シェフ本気の宴 -->
+<!-- 43 STORY 瀧シェフ本気の宴 -->
 <div class="s story">
   <img class="bg" src="./写真/刺身盛り.jpg" alt="">
   <div class="ov"></div>
   <div class="inner">
-    <span class="st-label">DAY 2 NIGHT · 瀧シェフ、本気を出す</span>
+    <span class="label">DAY 2 NIGHT · 瀧シェフ、本気を出す</span>
     <h3>完全に宴だった</h3>
-    <p>鯛、炙りカツオ、マアジ、イサキ、コウイカ、タカエビ。刺身盛りだけで歓声が上がる。そこへ、みな特製の「二番醤油」。再仕込み醤油ならではの濃厚なコクが、魚の甘みを何倍にも引き上げる。</p>
-    <p>さらに薪窯ピザ、炭火でメヒカリ・黒豚・地鶏、採れたてコーン、ホクホクのジャガバター、そして締めのアルデンテのペペロンチーノ。ひとみさん特製の愛情たっぷりデコレーションケーキ。</p>
-    <blockquote>「一どん」「天狗桜」「村尾」という幻級焼酎まで並ぶ。完全に宴だった。</blockquote>
+    <p>刺身盛りだけで歓声が上がる。みな特製「二番醤油」。薪窯ピザ。炭火でメヒカリ・黒豚・地鶏。ジャガバター。</p>
+    <blockquote>最後はアルデンテのペペロンチーノ。「一どん」「天狗桜」「村尾」という幻級焼酎まで並ぶ。完全に宴だった。</blockquote>
   </div>
 </div>
 
-<!-- ㊱ PHOTO: 刺身盛り -->
-<div class="s photo n2">
-  <div class="ph">
-    <img src="./写真/刺身盛り.jpg" alt="">
-    <img src="./写真/刺身盛り１.jpg" alt="">
-  </div>
-  <div class="cap">
-    <span class="c-day">DAY 2 NIGHT · 刺身盛り</span>
-    <h3>刺身盛りだけで歓声が上がる</h3>
-    <p>みな特製「二番醤油」——再仕込み醤油ならではの濃厚なコクが、魚の甘みを何倍にも引き上げる。</p>
-  </div>
-</div>
-
-<!-- ㊲ PHOTO: ピザ① -->
+<!-- 44 PHOTO ピザ準備 -->
 <div class="s photo n3">
   <div class="ph">
+    <img src="./写真/ピザ.jpg" alt="">
     <img src="./写真/たき・そら・しんでピザ作り.jpg" alt="">
-    <img src="./写真/釜でピザ焼き.jpg" alt="">
-    <img src="./写真/釜でピザ焼き２.jpg" alt="">
+    <img src="./写真/ピザを焼くたきそらしんあお.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 2 NIGHT · 薪窯ピザ</span>
+    <span class="cday">DAY 2 NIGHT · 薪窯ピザ</span>
     <h3>たき・そら・しん、生地をこねる</h3>
-    <p>マルゲリータとしらすピザ。窯に火が入ると、夜の庭に香ばしい匂いが広がった。</p>
+    <p>マルゲリータとしらすピザ。全員で準備を楽しんだ。</p>
   </div>
 </div>
 
-<!-- ㊳ PHOTO: ピザ② -->
+<!-- 45 PHOTO 薪窯 -->
 <div class="s photo n3">
   <div class="ph">
+    <img src="./写真/薪でピザを焼く.jpg" alt="">
+    <img src="./写真/薪でピザを焼く２.jpg" alt="">
+    <img src="./写真/釜でピザ焼き.jpg" alt="">
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 NIGHT · 薪窯の炎</span>
+    <h3>窯の炎が夜の庭を照らした</h3>
+  </div>
+</div>
+
+<!-- 46 PHOTO ピザ焼き -->
+<div class="s photo n4">
+  <div class="ph">
+    <img src="./写真/釜でピザ焼き２.jpg" alt="">
     <img src="./写真/釜でピザ焼き３.jpg" alt="">
     <img src="./写真/釜でピザ焼き４.jpg" alt="">
     <img src="./写真/釜でピザを焼く４.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 2 NIGHT · 薪窯</span>
-    <h3>炎の前では、みんなの顔が温かいオレンジ色に染まった</h3>
+    <span class="cday">DAY 2 NIGHT</span>
+    <h3>香ばしい匂いが夜の庭に広がる</h3>
   </div>
 </div>
 
-<!-- ㊴ PHOTO: BBQ -->
+<!-- 47 PHOTO ピザ食べる・BBQ -->
 <div class="s photo n2">
   <div class="ph">
+    <img src="./写真/ピザを食べるそらしんあお.jpg" alt="">
     <img src="./写真/たきのBBQ.jpg" alt="">
-    <img src="./写真/たきBBQ２.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 2 NIGHT · BBQ</span>
+    <span class="cday">DAY 2 NIGHT · 宴が始まった</span>
+    <h3>「いやこれ店じゃん」「店よりうまい」</h3>
+  </div>
+</div>
+
+<!-- 48 PHOTO BBQ -->
+<div class="s photo n2">
+  <div class="ph">
+    <img src="./写真/たきBBQ２.jpg" alt="">
+    <img src="./写真/BBQするたきとそら.jpg" alt="">
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 NIGHT · BBQ</span>
     <h3>黒豚。地鶏。メヒカリ。コーン。ジャガバター。</h3>
   </div>
 </div>
 
-<!-- ㊵ PHOTO: 宴の夜 -->
-<div class="s photo n3">
+<!-- 49 PHOTO 宴の夜 -->
+<div class="s photo n2">
   <div class="ph">
     <img src="./写真/2日目の夕食.jpg" alt="">
-    <img src="./写真/締めのペペロンチーノを作るたき.jpg" alt="">
     <img src="./写真/締めのペペロンチーノと黒豚.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 2 NIGHT · 宴</span>
+    <span class="cday">DAY 2 NIGHT · 宴</span>
     <h3>笑い声。話し声。グラスの音。焚き火の匂い。</h3>
-    <p>その横でミーシャは、焼き魚の香りに少し反応しながら、優雅に毛づくろい。"この宴に慣れている猫"だった。</p>
+    <p>その横でミーシャは、焼き魚の香りに少し反応しながら、優雅に毛づくろい。</p>
   </div>
 </div>
 
-<!-- ㊶ STORY: 星空 -->
+<!-- 50 STORY 星空「大丈夫」 -->
 <div class="s story">
-  <img class="bg" src="./写真/花火の後に星を眺める.jpg" alt="">
+  <img class="bg" src="./写真/寝っ転がって星を見る.jpg" alt="">
   <div class="ov"></div>
   <div class="inner">
-    <span class="st-label">DAY 2 · 21:30 · 星空の下で</span>
+    <span class="label">DAY 2 · 21:30 · 星空の下で</span>
     <h3>星空の下で感じた<br>「大丈夫」</h3>
-    <p>夜はブルーシートを広げ、みんなで星空を見上げた。初日にみなとけんが見た流れ星の話をしながら、花火をする。笑い声。波の音。焚き火の匂い。そして、暗闇の向こうを歩くミーシャの気配。</p>
-    <blockquote>その空間には、「大丈夫」という空気が流れていた。このメンバーなら大丈夫。この時間は大丈夫。人生って、案外大丈夫かもしれない。</blockquote>
+    <p>夜はブルーシートを広げ、みんなで星空を見上げた。流れ星の話をしながら、花火をする。笑い声。波の音。焚き火の匂い。</p>
+    <blockquote>その空間には、「大丈夫」という空気が流れていた。このメンバーなら大丈夫。人生って、案外大丈夫かもしれない。</blockquote>
   </div>
 </div>
 
-<!-- ㊷ PHOTO: 花火と星空 -->
+<!-- 51 PHOTO 花火 -->
 <div class="s photo n2">
   <div class="ph">
-    <img src="./写真/花火の後に星を眺める.jpg" alt="">
+    <img src="./写真/花火.jpg" alt="">
     <img src="./写真/花火の後に星を眺める２.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 2 · 深夜</span>
+    <span class="cday">DAY 2 · 花火 → 星空</span>
     <h3>深夜、パトロールを終えたミーシャが帰宅し、縁側で丸くなる</h3>
     <p>「今日も平和だね」——そう言っているみたいだった。</p>
   </div>
 </div>
 
-<!-- ㊸ CHAPTER: 3日目 -->
+<!-- 52 PHOTO 星を見る -->
+<div class="s photo n1">
+  <div class="ph">
+    <img src="./写真/寝っ転がって星を見る.jpg" alt="">
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · 深夜</span>
+    <h3>ブルーシートの上で、みんなで空を見上げた夜</h3>
+  </div>
+</div>
+
+<!-- 53 CHAPTER 最終日 -->
 <div class="s chapter">
   <img class="bg" src="./写真/３日目の朝食の漬け丼.jpg" alt="">
   <div class="ov"></div>
-  <div class="ch-inner rel">
-    <span class="ch-day">最終日 ／ 5月18日（土）</span>
+  <div class="inner rel">
+    <span class="day">最終日 ／ 5月18日（土）</span>
     <h2>美山と、<br>旅の続きを持ち帰る</h2>
     <div class="rule"></div>
   </div>
 </div>
 
-<!-- ㊹ PHOTO: 最終日の朝食 -->
+<!-- 54 PHOTO 最終日朝食 -->
 <div class="s photo n2">
   <div class="ph">
     <img src="./写真/３日目の朝食の漬け丼.jpg" alt="">
     <img src="./写真/マンゴーを切るしん.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 3 · 8:00</span>
-    <h3>残った刺身で作る、贅沢な漬け茶漬け</h3>
-    <p>しんちゃんが鮮やかに切り分けた完熟マンゴー。帰る日なのに、時間だけゆっくり流れていた。</p>
+    <span class="cday">DAY 3 · 8:00 · 最終日の朝</span>
+    <h3>残った刺身で作る贅沢な漬け茶漬け。しんが切る完熟マンゴー。</h3>
+    <p>帰る日なのに、時間だけゆっくり流れていた。</p>
   </div>
 </div>
 
-<!-- ㊺ PHOTO: 3日目の活動 -->
+<!-- 55 PHOTO 最終日朝② -->
 <div class="s photo n2">
   <div class="ph">
-    <img src="./写真/あおとしんでシール交換.jpg" alt="">
-    <img src="./写真/にわに桜貝をもらう.jpg" alt="">
+    <img src="./写真/3日目の朝食を食べるはなとにわ.jpg" alt="">
+    <img src="./写真/コーヒーをミルするあおとしん.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 3 · にわの家 → 江口海浜公園</span>
-    <h3>シール交換。最後の貝拾い。旅の最後まで全力で遊んでいる。</h3>
+    <span class="cday">DAY 3 · 朝のひととき</span>
+    <h3>子どもたちが豆を擦って淹れてくれたコーヒー</h3>
   </div>
 </div>
 
-<!-- ㊻ PHOTO: 美山 -->
+<!-- 56 PHOTO ミーシャの朝・シール -->
 <div class="s photo n2">
   <div class="ph">
+    <img src="./写真/ミーシャとの朝.jpg" alt="">
+    <img src="./写真/あおとしんでシール交換.jpg" alt="">
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 3 · 朝</span>
+    <h3>ミーシャはちゃんとそこにいた。あおとしんは最後までシール交換に夢中。</h3>
+  </div>
+</div>
+
+<!-- 57 PHOTO 美山 -->
+<div class="s photo n3">
+  <div class="ph">
     <img src="./写真/心斎釜１.jpg" alt="">
+    <img src="./写真/心斎釜の器.jpg" alt="">
     <img src="./写真/心斎窯に入るはな.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 3 · 12:00 · 薩摩焼の里・美山 / 心斎窯 ギャラリー美山路</span>
+    <span class="cday">DAY 3 · 12:00 · 薩摩焼の里・美山 / 心斎窯 ギャラリー美山路</span>
     <h3>器を買うというより、"旅の記憶を持ち帰る"感覚</h3>
-    <p>瀧シェフが30年使えるステーキ皿を真剣に吟味している姿が印象的だった。</p>
   </div>
 </div>
 
-<!-- ㊼ PHOTO: 中川茶屋 -->
-<div class="s photo n2">
+<!-- 58 PHOTO 中川茶屋 -->
+<div class="s photo n4">
   <div class="ph">
+    <img src="./写真/中川茶屋.jpg" alt="">
     <img src="./写真/中川茶屋での昼食.jpg" alt="">
+    <img src="./写真/中川茶屋のしん.jpg" alt="">
+    <img src="./写真/中川茶屋のにわとたき.jpg" alt="">
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 3 · 13:00 · 中川茶屋</span>
+    <h3>「また来ようね」ではなく「次いつ来る？」という会話になっていた</h3>
+  </div>
+</div>
+
+<!-- 59 PHOTO 中川全員 -->
+<div class="s photo n1">
+  <div class="ph">
     <img src="./写真/中川茶屋で最後の昼食後に全員で.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 3 · 13:00 · 中川茶屋</span>
-    <h3>「また来ようね」ではなく、「次いつ来る？」という会話になっていた</h3>
+    <span class="cday">DAY 3 · 中川茶屋 全員集合</span>
+    <h3>そんな不完全さまで、全部が面白かった</h3>
+    <p>途中、たきが鞄を忘れるハプニングも発生。でも、にわの迅速なサポートで無事回収。</p>
   </div>
 </div>
 
-<!-- ㊽ STORY: 残念じゃっど -->
+<!-- 60 STORY 残念じゃっど -->
 <div class="s story">
   <img class="bg" src="./写真/にわとみなとのお別れ.jpg" alt="">
   <div class="ov"></div>
   <div class="inner">
-    <span class="st-label">DAY 3 · 別れ際</span>
+    <span class="label">DAY 3 · 別れ際</span>
     <h3>「残念じゃっど」</h3>
-    <p>空港では、にわが持たせてくれた揚げたてのつけあげをつまみに、ビールで乾杯した。別れ際。</p>
-    <blockquote>「残念じゃっど」——鹿児島弁で、「残念だなぁ」。</blockquote>
-    <p>でも、その言葉には寂しさだけじゃなく、「また会おう」が入っていた。「もう一つ忘れてたの何だっけ？」そんな会話をしながら、最後まで笑っていた。</p>
+    <p>鹿児島弁で、「残念だなぁ」。でも、その言葉には寂しさだけじゃなく、「また会おう」が入っていた。</p>
+    <blockquote>「もう一つ忘れてたの何だっけ？」そんな会話をしながら、最後まで笑っていた。</blockquote>
   </div>
 </div>
 
-<!-- ㊾ PHOTO: お別れ -->
+<!-- 61 PHOTO お別れ -->
 <div class="s photo n3">
   <div class="ph">
     <img src="./写真/にわとみなとのお別れ.jpg" alt="">
@@ -692,46 +844,45 @@ html,body{width:100%;height:100%;background:var(--ink);overflow:hidden;font-fami
     <img src="./写真/にわとみなの笑顔.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 3 · にわ、みな</span>
+    <span class="cday">DAY 3 · にわ、みな</span>
     <h3>その笑顔の裏には、「また会える」がちゃんとある</h3>
   </div>
 </div>
 
-<!-- ㊿ PHOTO: 空港 -->
+<!-- 62 PHOTO 空港 -->
 <div class="s photo n1">
   <div class="ph">
     <img src="./写真/帰りの空港で食べたつけ揚げ.jpg" alt="">
   </div>
   <div class="cap">
-    <span class="c-day">DAY 3 · 15:00 · 鹿児島空港</span>
+    <span class="cday">DAY 3 · 15:00 · 鹿児島空港</span>
     <h3>つけあげ × ビール × しろくまアイス——最後の最後まで鹿児島を味わい尽くす</h3>
   </div>
 </div>
 
-<!-- 51 STORY: おわりに -->
+<!-- 63 STORY おわりに -->
 <div class="s story">
-  <img class="bg" src="./写真/にわとみなの笑顔.jpg" alt="">
+  <img class="bg" src="./写真/江口浜の夕暮れ２.jpg" alt="">
   <div class="ov"></div>
   <div class="inner">
-    <span class="st-label">EPILOGUE</span>
+    <span class="label">EPILOGUE</span>
     <h3>旅で一番大切なのは、<br>人だった</h3>
     <p>旅が終わったあと、LINEにはこんな言葉が並んでいた。</p>
     <blockquote>「場所も良かった。でも、人なんだよね」</blockquote>
-    <p>絶景も。温泉も。料理も。全部最高だった。でも一番心に残ったのは、人の温度だった。誰かが薪をくべ、誰かが料理を作り、誰かが笑い、ミーシャが自由に庭を歩いている。その何気ない時間が、どうしようもなく幸せだった。</p>
-    <p>日置の風。焚き火の匂い。器の重み。そして、夜の庭を静かに歩くミーシャの姿。その全部を胸に、私たちはまた、それぞれの日常へ戻っていった。</p>
+    <p>絶景も。温泉も。料理も。全部最高だった。でも一番心に残ったのは、人の温度だった。誰かが薪をくべ、誰かが料理を作り、誰かが笑い、ミーシャが自由に庭を歩いている——その何気ない時間が、どうしようもなく幸せだった。</p>
   </div>
 </div>
 
-<!-- 52 QUOTE: 最後 -->
+<!-- 64 QUOTE ラスト -->
 <div class="s quote">
-  <img class="bg" src="./写真/江口浜でサンセット.jpg" alt="">
-  <div class="ov" style="background:rgba(10,9,9,.65)"></div>
-  <div class="q-inner rel">
+  <img class="bg" src="./写真/江口浜の夕暮れ２.jpg" alt="">
+  <div class="ov" style="background:rgba(10,9,9,.67)"></div>
+  <div class="inner rel">
     <q>「残念じゃっど」<br>その言葉の裏には、<br>「また会える」がちゃんとある。</q>
   </div>
 </div>
 
-<!-- 53 FINALE -->
+<!-- 65 PHOTO 最後のページ -->
 <div class="s photo n1" style="background:#0f0f10">
   <div class="ph" style="padding:0">
     <img src="./写真/最後のページ.jpg" alt="">
@@ -741,9 +892,9 @@ html,body{width:100%;height:100%;background:var(--ink);overflow:hidden;font-fami
 </div><!-- #ss -->
 
 <div id="nav">
-  <button class="nb" id="pb">&#8592;</button>
-  <span id="ctr">1 / 53</span>
-  <button class="nb" id="nb2">&#8594;</button>
+  <button class="nb" id="pb" aria-label="前へ">&#8592;</button>
+  <span id="ctr">1 / 65</span>
+  <button class="nb" id="nb2" aria-label="次へ">&#8594;</button>
 </div>
 
 <script>
@@ -767,11 +918,12 @@ document.addEventListener('keydown', e => {
   if (['ArrowLeft','ArrowUp'].includes(e.key)) { e.preventDefault(); go(cur - 1); }
 });
 
-let tx = 0;
-document.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, {passive:true});
+let tx = 0, ty = 0;
+document.addEventListener('touchstart', e => { tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, {passive:true});
 document.addEventListener('touchend', e => {
-  const d = tx - e.changedTouches[0].clientX;
-  if (Math.abs(d) > 50) go(cur + (d > 0 ? 1 : -1));
+  const dx = tx - e.changedTouches[0].clientX;
+  const dy = Math.abs(ty - e.changedTouches[0].clientY);
+  if (Math.abs(dx) > 50 && dy < 80) go(cur + (dx > 0 ? 1 : -1));
 }, {passive:true});
 
 go(0);
