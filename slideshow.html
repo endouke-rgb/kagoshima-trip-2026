@@ -1028,7 +1028,7 @@ slides.forEach((slide, i) => {
   drwr.className = 'drwr';
   drwr.innerHTML =
     `<div class="drwr-body">${txt}</div>` +
-    `<div class="drwr-handle"><span class="arr">▲</span><span class="htxt">本文を読む</span></div>`;
+    `<div class="drwr-handle"><span class="arr">▲</span><span class="htxt">${(i===0||i===total-1)?'全文を読む':'本文を読む'}</span></div>`;
   slide.appendChild(drwr);
 
   const handle = drwr.querySelector('.drwr-handle');
@@ -1038,7 +1038,8 @@ slides.forEach((slide, i) => {
     e.stopPropagation();
     const isOpen = drwr.classList.toggle('open');
     handle.querySelector('.arr').textContent = isOpen ? '▼' : '▲';
-    handle.querySelector('.htxt').textContent = isOpen ? '閉じる' : '本文を読む';
+    const defaultTxt = (i===0||i===total-1) ? '全文を読む' : '本文を読む';
+    handle.querySelector('.htxt').textContent = isOpen ? '閉じる' : defaultTxt;
   });
 
   // ドロワー内スクロール中はスライド遷移をブロック
@@ -1049,9 +1050,11 @@ slides.forEach((slide, i) => {
 /* ========== スライドナビゲーション ========== */
 function closeDrawers() {
   document.querySelectorAll('.drwr.open').forEach(d => {
+    const slide = d.closest('.s');
+    const idx = Array.from(slides).indexOf(slide);
     d.classList.remove('open');
     d.querySelector('.arr').textContent = '▲';
-    d.querySelector('.htxt').textContent = '本文を読む';
+    d.querySelector('.htxt').textContent = (idx===0||idx===total-1) ? '全文を読む' : '本文を読む';
   });
 }
 
