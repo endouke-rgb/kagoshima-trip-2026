@@ -1022,6 +1022,10 @@ const T = [
 ];
 
 /* ========== ドロワー生成 ========== */
+const slides = document.querySelectorAll('.s');
+const total = slides.length;
+let cur = 0;
+
 slides.forEach((slide, i) => {
   const txt = T[i] || '';
   if (!txt) return;
@@ -1048,10 +1052,6 @@ slides.forEach((slide, i) => {
 });
 
 /* ========== スライドナビゲーション ========== */
-const slides = document.querySelectorAll('.s');
-const total = slides.length;
-let cur = 0;
-
 function closeDrawers() {
   document.querySelectorAll('.drwr.open').forEach(d => {
     d.classList.remove('open');
