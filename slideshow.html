@@ -144,6 +144,17 @@ html,body{width:100%;height:100%;background:var(--ink);overflow:hidden;font-fami
   .drwr-body{font-size:15px;padding:18px 20px 48px}
 }
 
+
+/* ── VIDEO SLIDES ── */
+.s.video{flex-direction:column}
+.vwrap{flex:1;position:relative;background:#000;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.vthumb{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000}
+.vbtn{position:absolute;inset:0;background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}
+.vico{width:72px;height:72px;background:rgba(0,0,0,.65);border:2px solid rgba(255,255,255,.8);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;color:white;padding-left:6px;flex-shrink:0}
+.vframe{position:absolute;inset:0;width:100%;height:100%;border:none;display:none}
+.vwrap.playing .vthumb,.vwrap.playing .vbtn{display:none}
+.vwrap.playing .vframe{display:block}
+
 /* ── MOBILE ── */
 @media(max-width:600px){
   .s.story{padding:48px 28px 220px}
@@ -236,6 +247,33 @@ html,body{width:100%;height:100%;background:var(--ink);overflow:hidden;font-fami
   </div>
 </div>
 
+
+<!-- VIDEO フェリーで桜島へ向かう -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/M2WLF9mb8Vw/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/M2WLF9mb8Vw?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 1 · 桜島フェリー</span>
+    <h3>▶ フェリーで桜島へ向かう</h3>
+  </div>
+</div>
+
+<!-- VIDEO 思いがけずフェリーへ乗っちゃう -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/QojiZ5iD4J0/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/QojiZ5iD4J0?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 1 · 桜島フェリー</span>
+    <h3>▶ 思いがけずフェリーへ乗っちゃう</h3>
+  </div>
+</div>
+
 <!-- 7 PHOTO フェリー -->
 <div class="s photo n2">
   <div class="ph">
@@ -283,6 +321,46 @@ html,body{width:100%;height:100%;background:var(--ink);overflow:hidden;font-fami
   </div>
 </div>
 
+
+<!-- VIDEO 溶岩なぎさ遊歩道 -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/5xhEzWMDzcU/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/5xhEzWMDzcU?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 1 · 溶岩なぎさ遊歩道</span>
+    <h3>▶ 溶岩なぎさ遊歩道</h3>
+  </div>
+</div>
+
+<!-- VIDEO 溶岩なぎさ遊歩道の海 -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/91T8Ve4vE00/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/91T8Ve4vE00?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 1 · 溶岩なぎさ遊歩道</span>
+    <h3>▶ 溶岩なぎさ遊歩道の海</h3>
+  </div>
+</div>
+
+<!-- VIDEO 溶岩なぎさ遊歩道の海岸 -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/Jt0tWPM5VZA/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/Jt0tWPM5VZA?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 1 · 溶岩なぎさ遊歩道</span>
+    <h3>▶ 溶岩なぎさ遊歩道の海岸</h3>
+  </div>
+</div>
+
 <!-- 11 PHOTO 溶岩遊歩道 -->
 <div class="s photo n2">
   <div class="ph">
@@ -292,6 +370,33 @@ html,body{width:100%;height:100%;background:var(--ink);overflow:hidden;font-fami
   <div class="cap">
     <span class="cday">DAY 1 · 溶岩なぎさ遊歩道</span>
     <h3>自然のスケール感に、圧倒される</h3>
+  </div>
+</div>
+
+
+<!-- VIDEO 溶岩なぎさ遊歩道のうに -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/RqLx7OwSUP0/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/RqLx7OwSUP0?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 1 · 溶岩なぎさ遊歩道</span>
+    <h3>▶ 溶岩なぎさ遊歩道のうに</h3>
+  </div>
+</div>
+
+<!-- VIDEO 江口浜へ向かう道 -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/w-k_hzR98cI/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/w-k_hzR98cI?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 1 · 日置へ向かう</span>
+    <h3>▶ 江口浜へ向かう道</h3>
   </div>
 </div>
 
@@ -404,6 +509,72 @@ html,body{width:100%;height:100%;background:var(--ink);overflow:hidden;font-fami
   </div>
 </div>
 
+
+<!-- VIDEO ミーシャとの出会い -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/JmqPj_8XluY/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/JmqPj_8XluY?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 1 · ミーシャ</span>
+    <h3>▶ ミーシャとの出会い</h3>
+  </div>
+</div>
+
+<!-- VIDEO ミーシャを追いかけるあお -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/ohNaZn1QOBE/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/ohNaZn1QOBE?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 1 · ミーシャ</span>
+    <h3>▶ ミーシャを追いかけるあお</h3>
+  </div>
+</div>
+
+<!-- VIDEO ミーシャとあおとしん -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/1ZtBtB9dSWQ/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/1ZtBtB9dSWQ?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 1 · ミーシャ</span>
+    <h3>▶ ミーシャとあおとしん</h3>
+  </div>
+</div>
+
+<!-- VIDEO ミーシャとあおとみな -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/Z4sEOa_bWwc/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/Z4sEOa_bWwc?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 1 · ミーシャ</span>
+    <h3>▶ ミーシャとあおとみな</h3>
+  </div>
+</div>
+
+<!-- VIDEO ミーシャを探すみなとあお -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/CPAnJ51w3xs/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/CPAnJ51w3xs?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 1 · ミーシャ</span>
+    <h3>▶ ミーシャを探すみなとあお</h3>
+  </div>
+</div>
+
 <!-- 21 PHOTO ミーシャ -->
 <div class="s photo n1">
   <div class="ph">
@@ -439,6 +610,20 @@ html,body{width:100%;height:100%;background:var(--ink);overflow:hidden;font-fami
   <div class="cap">
     <span class="cday">DAY 1 · ミーシャとみんな</span>
     <h3>誰かに媚びるわけでもない。でも、ちゃんと人のそばにいる。</h3>
+  </div>
+</div>
+
+
+<!-- VIDEO つれづれ温泉 -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/pgKEj7U9Niw/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/pgKEj7U9Niw?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 1 · つれづれの湯</span>
+    <h3>▶ つれづれ温泉</h3>
   </div>
 </div>
 
@@ -516,6 +701,20 @@ html,body{width:100%;height:100%;background:var(--ink);overflow:hidden;font-fami
   </div>
 </div>
 
+
+<!-- VIDEO 焚き火で干物の朝食 -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/86gRi9pc_9w/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/86gRi9pc_9w?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · 焚き火の朝食</span>
+    <h3>▶ 焚き火で干物の朝食</h3>
+  </div>
+</div>
+
 <!-- 30 PHOTO 焚き火の朝 -->
 <div class="s photo n2">
   <div class="ph">
@@ -566,6 +765,111 @@ html,body{width:100%;height:100%;background:var(--ink);overflow:hidden;font-fami
   </div>
 </div>
 
+
+<!-- VIDEO コーヒーを煎る -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/MZLCmI2kbNQ/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/MZLCmI2kbNQ?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · コーヒー焙煎</span>
+    <h3>▶ コーヒーを煎る</h3>
+  </div>
+</div>
+
+<!-- VIDEO コーヒーを煎るみな -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/f0GszTsL02g/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/f0GszTsL02g?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · コーヒー焙煎</span>
+    <h3>▶ コーヒーを煎るみな</h3>
+  </div>
+</div>
+
+<!-- VIDEO コーヒーを煎るみな２ -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/38fe9tbLdPg/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/38fe9tbLdPg?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · コーヒー焙煎</span>
+    <h3>▶ コーヒーを煎るみな２</h3>
+  </div>
+</div>
+
+<!-- VIDEO コーヒーを煎るみな３ -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/HO74Mvb9018/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/HO74Mvb9018?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · コーヒー焙煎</span>
+    <h3>▶ コーヒーを煎るみな３</h3>
+  </div>
+</div>
+
+<!-- VIDEO コーヒーを煎るそら -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/TsvAovghcuE/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/TsvAovghcuE?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · コーヒー焙煎</span>
+    <h3>▶ コーヒーを煎るそら</h3>
+  </div>
+</div>
+
+<!-- VIDEO コーヒーを煎るあおとしん -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/zzHpCcIJXS4/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/zzHpCcIJXS4?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · コーヒー焙煎</span>
+    <h3>▶ コーヒーを煎るあおとしん</h3>
+  </div>
+</div>
+
+<!-- VIDEO コーヒーを煎るけん -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/OPtmORQAZA8/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/OPtmORQAZA8?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · コーヒー焙煎</span>
+    <h3>▶ コーヒーを煎るけん</h3>
+  </div>
+</div>
+
+<!-- VIDEO 自家焙煎コーヒーをいれるみな -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/5RjMk8ee9NE/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/5RjMk8ee9NE?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · コーヒー</span>
+    <h3>▶ 自家焙煎コーヒーをいれるみな</h3>
+  </div>
+</div>
+
 <!-- 34 PHOTO 陶器でコーヒー -->
 <div class="s photo n1">
   <div class="ph">
@@ -574,6 +878,46 @@ html,body{width:100%;height:100%;background:var(--ink);overflow:hidden;font-fami
   <div class="cap">
     <span class="cday">DAY 2 · 自家焙煎コーヒー</span>
     <h3>「え、なにこれ…美味しい…」——一口飲んだ瞬間、みんな静かになった</h3>
+  </div>
+</div>
+
+
+<!-- VIDEO 炙りカツオを捌く炚き -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/cmHn9cKxAEo/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/cmHn9cKxAEo?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · 仕込み</span>
+    <h3>▶ 炙りカツオを捌く炚き</h3>
+  </div>
+</div>
+
+<!-- VIDEO カツオを捌くたき -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/jsiBy1AHt-U/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/jsiBy1AHt-U?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · 仕込み</span>
+    <h3>▶ カツオを捌くたき</h3>
+  </div>
+</div>
+
+<!-- VIDEO 二番醤油の説明をするみな -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/9Mfx2Bw1bnk/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/9Mfx2Bw1bnk?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · 仕込み</span>
+    <h3>▶ 二番醤油の説明をするみな</h3>
   </div>
 </div>
 
@@ -601,6 +945,20 @@ html,body{width:100%;height:100%;background:var(--ink);overflow:hidden;font-fami
     <span class="cday">DAY 2 · 江口蓬菜館で仕入れた鮮魚</span>
     <h3>鯛・炙りカツオ・マアジ・イサキ・コウイカ・タカエビ</h3>
     <p>刺身盛りだけで歓声が上がる。</p>
+  </div>
+</div>
+
+
+<!-- VIDEO 江口浜で遊ぶあおとしん -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/OBuP65G5A2Q/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/OBuP65G5A2Q?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · 江口海浜公園</span>
+    <h3>▶ 江口浜で遊ぶあおとしん</h3>
   </div>
 </div>
 
@@ -665,6 +1023,33 @@ html,body{width:100%;height:100%;background:var(--ink);overflow:hidden;font-fami
   </div>
 </div>
 
+
+<!-- VIDEO 江口浜のサンセット -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/nJBaGHrmekY/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/nJBaGHrmekY?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · 江口海浜公園</span>
+    <h3>▶ 江口浜のサンセット</h3>
+  </div>
+</div>
+
+<!-- VIDEO 江口浜のサンセット２ -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/gBSKdd_bEnA/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/gBSKdd_bEnA?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · 江口海浜公園</span>
+    <h3>▶ 江口浜のサンセット２</h3>
+  </div>
+</div>
+
 <!-- 42 PHOTO 夕日 -->
 <div class="s photo n2">
   <div class="ph">
@@ -716,6 +1101,20 @@ html,body{width:100%;height:100%;background:var(--ink);overflow:hidden;font-fami
   </div>
 </div>
 
+
+<!-- VIDEO 釜でピザを焼くミナ -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/oKJTYOSXIws/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/oKJTYOSXIws?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · 薪窯ピザ</span>
+    <h3>▶ 釜でピザを焼くミナ</h3>
+  </div>
+</div>
+
 <!-- 46 PHOTO ピザ焼き -->
 <div class="s photo n4">
   <div class="ph">
@@ -727,6 +1126,46 @@ html,body{width:100%;height:100%;background:var(--ink);overflow:hidden;font-fami
   <div class="cap">
     <span class="cday">DAY 2 NIGHT</span>
     <h3>香ばしい匂いが夜の庭に広がる</h3>
+  </div>
+</div>
+
+
+<!-- VIDEO 焼き上がったピザを受け取るはな -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/gFrNIp31rZ8/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/gFrNIp31rZ8?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · 薪窯ピザ</span>
+    <h3>▶ 焼き上がったピザを受け取るはな</h3>
+  </div>
+</div>
+
+<!-- VIDEO みなにピザを食べさせるそら -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/0uOAUe9Kvcw/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/0uOAUe9Kvcw?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · ピザ</span>
+    <h3>▶ みなにピザを食べさせるそら</h3>
+  </div>
+</div>
+
+<!-- VIDEO たきにピザを食べさせるちお -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/VwCdp3VkaOQ/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/VwCdp3VkaOQ?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · ピザ</span>
+    <h3>▶ たきにピザを食べさせるちお</h3>
   </div>
 </div>
 
@@ -742,6 +1181,72 @@ html,body{width:100%;height:100%;background:var(--ink);overflow:hidden;font-fami
   </div>
 </div>
 
+
+<!-- VIDEO BBQの食材を並べるたきとそら -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/MddFdRF4ess/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/MddFdRF4ess?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · BBQ</span>
+    <h3>▶ BBQの食材を並べるたきとそら</h3>
+  </div>
+</div>
+
+<!-- VIDEO BBQの豚肉に塩を振る炊き -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/hRTYvqGk_QE/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/hRTYvqGk_QE?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · BBQ</span>
+    <h3>▶ BBQの豚肉に塩を振る炊き</h3>
+  </div>
+</div>
+
+<!-- VIDEO BBQの肉に塩を振る -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/qH-0HmaHw0o/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/qH-0HmaHw0o?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · BBQ</span>
+    <h3>▶ BBQの肉に塩を振る</h3>
+  </div>
+</div>
+
+<!-- VIDEO BBQで肉を焼く -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/Bq_912hkaZ0/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/Bq_912hkaZ0?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · BBQ</span>
+    <h3>▶ BBQで肉を焼く</h3>
+  </div>
+</div>
+
+<!-- VIDEO 黒豚BBQを切る -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/Uvz2H4YTcnA/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/Uvz2H4YTcnA?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · BBQ</span>
+    <h3>▶ 黒豚BBQを切る</h3>
+  </div>
+</div>
+
 <!-- 48 PHOTO BBQ -->
 <div class="s photo n2">
   <div class="ph">
@@ -751,6 +1256,46 @@ html,body{width:100%;height:100%;background:var(--ink);overflow:hidden;font-fami
   <div class="cap">
     <span class="cday">DAY 2 NIGHT · BBQ</span>
     <h3>黒豚。地鶏。メヒカリ。コーン。ジャガバター。</h3>
+  </div>
+</div>
+
+
+<!-- VIDEO ペペロンチーノを作るたき -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/LInvsJGied0/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/LInvsJGied0?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · 宴の夜</span>
+    <h3>▶ ペペロンチーノを作るたき</h3>
+  </div>
+</div>
+
+<!-- VIDEO ペペロンチーノを作るたき１ -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/b7ZfbdGY8NE/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/b7ZfbdGY8NE?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · 宴の夜</span>
+    <h3>▶ ペペロンチーノを作るたき１</h3>
+  </div>
+</div>
+
+<!-- VIDEO ペペロンチーノをみんなで食べる -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/in6NsTIfk4c/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/in6NsTIfk4c?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · 宴の夜</span>
+    <h3>▶ ペペロンチーノをみんなで食べる</h3>
   </div>
 </div>
 
@@ -779,6 +1324,59 @@ html,body{width:100%;height:100%;background:var(--ink);overflow:hidden;font-fami
   </div>
 </div>
 
+
+<!-- VIDEO 花火１ -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/YIWIax7_gwM/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/YIWIax7_gwM?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · 花火</span>
+    <h3>▶ 花火１</h3>
+  </div>
+</div>
+
+<!-- VIDEO 花火２ -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/KohUnwrTSKk/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/KohUnwrTSKk?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · 花火</span>
+    <h3>▶ 花火２</h3>
+  </div>
+</div>
+
+<!-- VIDEO 花火３ -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/e0MCWcuioDU/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/e0MCWcuioDU?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · 花火</span>
+    <h3>▶ 花火３</h3>
+  </div>
+</div>
+
+<!-- VIDEO 花火４ -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/txEWX86AnJs/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/txEWX86AnJs?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · 花火</span>
+    <h3>▶ 花火４</h3>
+  </div>
+</div>
+
 <!-- 51 PHOTO 花火 -->
 <div class="s photo n2">
   <div class="ph">
@@ -789,6 +1387,20 @@ html,body{width:100%;height:100%;background:var(--ink);overflow:hidden;font-fami
     <span class="cday">DAY 2 · 花火 → 星空</span>
     <h3>深夜、パトロールを終えたミーシャが帰宅し、縁側で丸くなる</h3>
     <p>「今日も平和だね」——そう言っているみたいだった。</p>
+  </div>
+</div>
+
+
+<!-- VIDEO みんなで星を眺める -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/vxwJQdlxkNE/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/vxwJQdlxkNE?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 2 · 星空</span>
+    <h3>▶ みんなで星を眺める</h3>
   </div>
 </div>
 
@@ -815,6 +1427,20 @@ html,body{width:100%;height:100%;background:var(--ink);overflow:hidden;font-fami
   </div>
 </div>
 
+
+<!-- VIDEO 最終日の朝食にわとはなで雑炊 -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/LwmLOa_49IU/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/LwmLOa_49IU?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 3 · 最終日の朝</span>
+    <h3>▶ 最終日の朝食にわとはなで雑炊</h3>
+  </div>
+</div>
+
 <!-- 54 PHOTO 最終日朝食 -->
 <div class="s photo n2">
   <div class="ph">
@@ -828,6 +1454,20 @@ html,body{width:100%;height:100%;background:var(--ink);overflow:hidden;font-fami
   </div>
 </div>
 
+
+<!-- VIDEO 最終日の朝コーヒーをミルするしんとあお -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/zuCK_O1_VEc/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/zuCK_O1_VEc?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 3 · 最終日の朝</span>
+    <h3>▶ 最終日の朝コーヒーをミルするしんとあお</h3>
+  </div>
+</div>
+
 <!-- 55 PHOTO 最終日朝② -->
 <div class="s photo n2">
   <div class="ph">
@@ -837,6 +1477,32 @@ html,body{width:100%;height:100%;background:var(--ink);overflow:hidden;font-fami
   <div class="cap">
     <span class="cday">DAY 3 · 朝のひととき</span>
     <h3>子どもたちが豆を擦って淹れてくれたコーヒー</h3>
+  </div>
+</div>
+
+
+<!-- VIDEO にわの家でしんちゃんけん玉 -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/TE_h91f1nhY/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/TE_h91f1nhY?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 3 · にわの家</span>
+    <h3>▶ にわの家でしんちゃんけん玉</h3>
+  </div>
+</div>
+<!-- VIDEO にわが拾った貝をもらう -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/fHQJt5dh_Uo/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/fHQJt5dh_Uo?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 3 · 最後の貝拾い</span>
+    <h3>▶ にわが拾った貝をもらう</h3>
   </div>
 </div>
 
@@ -903,6 +1569,20 @@ html,body{width:100%;height:100%;background:var(--ink);overflow:hidden;font-fami
   </div>
 </div>
 
+
+<!-- VIDEO 最終日お別れ -->
+<div class="s video">
+  <div class="vwrap">
+    <img class="vthumb" src="https://img.youtube.com/vi/xxmzbV1QzHA/hqdefault.jpg" alt="">
+    <button class="vbtn"><span class="vico">▶</span></button>
+    <iframe class="vframe" data-src="https://www.youtube.com/embed/xxmzbV1QzHA?rel=0&playsinline=1&controls=1&modestbranding=1" frameborder="0" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+  </div>
+  <div class="cap">
+    <span class="cday">DAY 3 · お別れ</span>
+    <h3>▶ 最終日お別れ</h3>
+  </div>
+</div>
+
 <!-- 61 PHOTO お別れ -->
 <div class="s photo n3">
   <div class="ph">
@@ -953,7 +1633,7 @@ html,body{width:100%;height:100%;background:var(--ink);overflow:hidden;font-fami
 
 <div id="nav">
   <button class="nb" id="pb" aria-label="前へ">&#8592;</button>
-  <span id="ctr">1 / 64</span>
+  <span id="ctr">1 / 114</span>
   <button class="nb" id="nb2" aria-label="次へ">&#8594;</button>
 </div>
 
@@ -1031,8 +1711,21 @@ const slides = document.querySelectorAll('.s');
 const total = slides.length;
 let cur = 0;
 
+let _ti = 0;
 slides.forEach((slide, i) => {
-  const txt = T[i] || '';
+  if (slide.classList.contains('video')) {
+    const btn = slide.querySelector('.vbtn');
+    if (btn) btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const w = btn.closest('.vwrap');
+      const fr = w.querySelector('.vframe');
+      fr.src = fr.dataset.src;
+      w.classList.add('playing');
+    });
+    return;
+  }
+  const txt = T[_ti] || '';
+  _ti++;
   if (!txt) return;
 
   const drwr = document.createElement('div');
@@ -1059,6 +1752,12 @@ slides.forEach((slide, i) => {
 });
 
 /* ========== スライドナビゲーション ========== */
+function stopVideos() {
+  document.querySelectorAll('.vwrap.playing').forEach(w => {
+    w.querySelector('.vframe').src = '';
+    w.classList.remove('playing');
+  });
+}
 function closeDrawers() {
   document.querySelectorAll('.drwr.open').forEach(d => {
     const slide = d.closest('.s');
@@ -1071,6 +1770,7 @@ function closeDrawers() {
 
 function go(n) {
   closeDrawers();
+  stopVideos();
   slides[cur].classList.remove('on');
   cur = ((n % total) + total) % total;
   slides[cur].classList.add('on');
