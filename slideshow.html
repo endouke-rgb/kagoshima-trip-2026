@@ -102,8 +102,7 @@ html,body{width:100%;height:100%;background:var(--ink);overflow:hidden;font-fami
   border-bottom:1px solid rgba(200,150,42,.15);
   -webkit-user-select:none;user-select:none;
 }
-.drwr-handle .arr{font-size:11px;transition:transform .3s}
-.drwr.open .drwr-handle .arr{transform:rotate(180deg)}
+.drwr-handle .arr{font-size:11px}
 .drwr-body{
   overflow-y:auto;-webkit-overflow-scrolling:touch;
   padding:22px 28px 48px;
@@ -1058,6 +1057,7 @@ function closeDrawers() {
   document.querySelectorAll('.drwr.open').forEach(d => {
     d.classList.remove('open');
     d.querySelector('.arr').textContent = '▲';
+    d.querySelector('.htxt').textContent = '本文を読む';
   });
 }
 
